@@ -1,0 +1,1014 @@
+/*
+1. Posicionamiento
+2. Modelo de caja (Box Model)
+3. Tipografía
+4. Visuales
+5. Otros
+*/
+
+:root
+{
+    /* Colores */
+    --bitcoinOrange: #F7931A;
+    --softOrange: #FFE9D5;
+    --secondaryBlue: #1a9af7;
+    --softBlue: #e7f5ff;
+    --warmBlack: #201e1c;
+    --black: #282623;
+    --grey: #bababa;
+    --offWhite: #faf8f7;
+    --justWhite: #fff;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+header
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+header img 
+{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center; /* asi lo alineo al displayearse como flex*/
+}
+
+.headerTitleContainer
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+.headerTitleContainer h1
+{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--justWhite);
+}
+
+.headerTitleContainer p
+{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--softOrange);
+}
+
+.headerTitleContainer .headerButton
+{
+    position: absolute;
+    left: calc(50% - 118px);
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--offWhite);
+    /* Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.headerButton span
+{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('./assets/mobileFirstIcons/downArrow.svg');
+}
+
+main
+{
+    width: 100%;
+    height: auto; /* Porque el mismo contenido es el que va a ir definiendo la altura de nuestro main*/
+    background-color: var(--offWhite);
+}
+
+.mainExchangeContainer
+{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.mainExchangeContainerTitle
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mainExchangeContainer .backgroundImg
+{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/mobileFirstImgs/bitcoin.svg');
+    background-size: cover;
+    background-position: center; /* Para que siempre podamos ver el  centro de la imagen sin importar el tamaño del contenedor */
+    background-repeat: no-repeat; /* Si la imagen fuera mas chica que el contenedor, el backgorund image repetiría la imagen para intentar cubrir el contenedor, con esto, hacemos que la imagen se estire para que intente quedar bien pero que no se repita*/
+} 
+
+.mainExchangeContainer h2
+{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.mainExchangeContainer p
+{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+/* .plansContainerSlider
+{
+    display: flex;
+    gap: 50px;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.plansContainerCard
+{
+    position: relative; /* Para después darle un position aboslut al p de recomendado y que quede flotante, usando de referencia este contenedor con position relative*/
+    /* scroll-snap-align: center;Esto es para que al navegar entre tarjetas te centre en una automáticamente y no te quedes entre dos tarjetas al deslizar */
+
+.mainTablesContainer
+{
+    display: flex;
+    gap: 40px;
+    height: 400px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.mainCurrencyTable
+{
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    /* margin-left: 50px; */ /* Esto lo podría utilizar si quisiera que la tabla quede centrada y no a la izquierda, sirve para los planes también*/
+    font-family: "Inter", sans-serif;
+}
+
+.mainCurrencyTable .currencyTableTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoinOrange);
+}
+
+.currencyTableContainer
+{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.currencyTableContainer table
+{
+    width: 100%;
+    height: 100%;
+}
+
+.currencyTableContainer td 
+{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--justWhite);
+}
+
+.currencyTableContainer .table__TopLeft
+{
+    border-radius: 15px 0 0 0;
+}
+
+.currencyTableContainer .table__TopRight
+{
+    border-radius: 0 15px 0 0;
+}
+
+.currencyTableContainer .table__BottomLeft
+{
+    border-radius: 0 0 0 15px;
+}
+
+.currencyTableContainer .table__BottomRight
+{
+    border-radius: 0 0 15px 0;
+}
+
+.currencyTableContainer .table__Right
+{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+.currencyTableContainer .down
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/mobileFirstIcons/trendingDown.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currencyTableContainer .up
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/mobileFirstIcons/trendingUp.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainTaxesTable
+{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+
+.mainTaxesTable .taxesTableTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondaryBlue);
+}
+
+.taxesTableContainer
+{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.taxesTableContainer table
+{
+    width: 100%;
+    height: 100%;
+}
+
+.taxesTableContainer td 
+{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--justWhite);
+}
+
+.taxesTableContainer .table__TopLeft
+{
+    border-radius: 15px 0 0 0;
+}
+
+.taxesTableContainer .table__TopRight
+{
+    border-radius: 0 15px 0 0;
+}
+
+.taxesTableContainer .table__BottomLeft
+{
+    border-radius: 0 0 0 15px;
+}
+
+.taxesTableContainer .table__BottomRight
+{
+    border-radius: 0 0 15px 0;
+}
+
+.taxesTableContainer .table__Right
+{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+.currencyTableDate
+{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--softOrange);
+    border-radius: 8px;
+}
+
+.currencyTableDate p
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    color: var(--warmBlack);
+}
+
+.taxesTableDate
+{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--softBlue);
+    border-radius: 8px;
+}
+
+.taxesTableDate p
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    color: var(--warmBlack);
+}
+
+.mainProductDetail
+{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warmBlack);
+}
+
+.productDetailBatataLogo
+{
+    position: absolute; /* Es importante que su contenedor padre tenga un position relative para que el position absolute se base en el, sino, se basaria en el relative de otro contenedor y se hace relajo*/
+    width: 40px;
+    height: 25px;
+    top: -10px;
+    left: calc(50% - 20px);
+    background-image: url('./assets/mobileFirstIcons/batata.svg');
+}
+
+.productDetailTitle
+{
+    width: 90%;
+    min-width: 288px;
+    height: auto; /* Para que el mismo texto delimite el crecimiento*/
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.productDetailTitle h2 
+{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--justWhite);
+}
+
+.productDetailTitle p
+{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .clock
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/clock.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .clock
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/clock.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/* A partir de ahora voy a repetir el código desde .productDetailCard hasta .productCardBody 4 veces para poder cambiar el icono de cada tarjeta, es el unico cambio que voy a hacer junto con los titulos y textos que tienen*/
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .eye
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/eye.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .clock
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/clock.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+
+
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .eye
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/eye.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .dollar
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/dollar.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .checkCircle
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/checkCircle.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.productDetailCard .clock
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/mobileFirstIcons/clock.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.productCardTitle
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+
+.productCardBody
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.bitcoinImgContainer
+{
+    width: 100%;
+    min-width: 320px;
+    height: 50vh;
+    background-image: url('./assets/mobileFirstImgs/bitcoinbaby.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.bitcoinImgContainer h2
+{
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--justWhite);
+}
+
+.mainPlansContainer
+{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.plansTitle
+{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.plansTitle h2
+{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.plansTitle p
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+.plansContainerSlider
+{
+    display: flex;
+    gap: 50px;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.plansContainerCard
+{
+    position: relative; /* Para después darle un position aboslut al p de recomendado y que quede flotante, usando de referencia este contenedor con position relative*/
+    scroll-snap-align: center;/* Esto es para que al navegar entre tarjetas te centre en una automáticamente y no te quedes entre dos tarjetas al deslizar*/
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 5px 0 ;
+    padding: 0 15px;
+    background-color: var(--justWhite);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+.recommended
+{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    padding: 6px;
+    top: -15px;
+    left: calc(50% - 60px);
+    font-size: 1.2rem;
+    background-color: var(--bitcoinOrange);
+    border-radius: 8px;
+    color: var(--justWhite);
+}
+
+.planCardTitle
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500px;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+
+.planCardPrice 
+{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.3rem;
+    color: var(--black);
+}
+
+.planCardPrice span
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: 25px;
+}
+
+.planCardSaving
+{
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+.planCardCA
+{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: var(--offWhite);
+    border: 2px solid var(--bitcoinOrange);
+    border-radius: 4px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+
+.planCardCA span
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/mobileFirstIcons/arrowRight.svg');
+    vertical-align: text-bottom;
+}
+
+footer
+{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoinOrange);
+}
+
+footer section
+{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .left ul
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+.left li
+{
+    margin: 10px 0;
+}
+
+.left a
+{
+    text-decoration: none;
+    color: var(--justWhite);
+}
